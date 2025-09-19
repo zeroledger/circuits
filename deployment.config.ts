@@ -1,12 +1,4 @@
-import { dynamicAddress } from "@dgma/hardhat-sol-bundler";
-
 const config = {
-    MockERC20: {
-        args: ["MockERC20", "MCK"],
-    },
-    EncryptionRegistry: {},
-    InputsLib: {},
-    PoseidonT3: {},
     DepositVerifier: {},
     Spend11Verifier: {},
     Spend12Verifier: {},
@@ -16,39 +8,13 @@ const config = {
     Spend23Verifier: {},
     Spend31Verifier: {},
     Spend32Verifier: {},
+    Spend33Verifier: {},
+    Spend81Verifier: {},
     Spend161Verifier: {},
-    Vault: {
-        options: {
-            libs: {
-                PoseidonT3: dynamicAddress("PoseidonT3"),
-                InputsLib: dynamicAddress("InputsLib"),
-            },
-        },
-        args: [
-            dynamicAddress("DepositVerifier"),
-            dynamicAddress("Spend11Verifier"),
-            dynamicAddress("Spend12Verifier"),
-            dynamicAddress("Spend13Verifier"),
-            dynamicAddress("Spend21Verifier"),
-            dynamicAddress("Spend22Verifier"),
-            dynamicAddress("Spend23Verifier"),
-            dynamicAddress("Spend31Verifier"),
-            dynamicAddress("Spend32Verifier"),
-            dynamicAddress("Spend161Verifier"),
-            dynamicAddress("EncryptionRegistry"),
-        ],
-    },
 };
 
 export default {
     hardhat: {
-        config: config,
-    },
-    localhost: { lockFile: "./local.deployment-lock.json", config: config },
-    opSepolia: {
-        lockFile: "./deployment-lock.json",
-        // verify: true,
-        // plugins: [VerifyPlugin],
         config: config,
     },
 };

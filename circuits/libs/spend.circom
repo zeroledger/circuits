@@ -24,7 +24,7 @@ template Spend(maxInputs, maxOutputs) {
     var input_sum = 0;
     var output_sum = 0;
 
-    // Validate each output
+    // Validate each input
     for (var i = 0; i < maxInputs; i++) {
         // 1. Validate hash[i] = poseidon_hash({amount[i], s[i]})
         input_hashers[i] = Poseidon(2);

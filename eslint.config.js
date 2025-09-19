@@ -23,7 +23,7 @@ module.exports = [
             parser: typescriptParser,
             parserOptions: {
                 project: "./tsconfig.json",
-                tsconfigRootDir: ".",
+                tsconfigRootDir: __dirname,
                 sourceType: "module",
             },
         },
