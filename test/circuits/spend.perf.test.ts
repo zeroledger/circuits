@@ -32,8 +32,9 @@ describe("Spend Circuits Performance Tests", function () {
     ): Promise<any> {
         const input = {
             inputs_hashes: Array(inputAmounts.length).fill(""),
+            inputs_interest: Array(inputAmounts.length).fill(""),
             outputs_hashes: Array(outputAmounts.length).fill(""),
-            fee: fee.toString(),
+            public_output_amount: fee.toString(), // public output equivalent to previous fee
             input_amounts: Array(inputAmounts.length).fill(""),
             input_sValues: Array(inputAmounts.length).fill(""),
             output_amounts: Array(outputAmounts.length).fill(""),
@@ -46,6 +47,8 @@ describe("Spend Circuits Performance Tests", function () {
             input.input_amounts[i] = inputAmounts[i].toString();
             input.input_sValues[i] = commitment.sValue;
             input.inputs_hashes[i] = commitment.hash;
+            // No interest on these inputs
+            input.inputs_interest[i] = "0";
         }
 
         // Generate output commitments
