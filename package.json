@@ -1,41 +1,43 @@
 {
-    "name": "circuits",
-    "version": "1.0.0-alpha",
-    "main": "index.js",
-    "scripts": {
-        "compile": "bash utils/compile.sh",
-        "test": "npx hardhat test",
-        "commitment": "ts-node utils/commitment.ts",
-        "lint": "eslint .",
-        "lint:fix": "eslint . --fix",
-        "deploy": "npx hardhat --network hardhat deploy-bundle"
-    },
-    "keywords": [
-        "zeroleger",
-        "circuit",
-        "plonk"
-    ],
-    "author": "Dzmitry Lahunouski",
-    "license": "SEE LICENSE IN LICENSE",
-    "description": "Circuit for the Zeroleger",
-    "devDependencies": {
-        "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
-        "@nomicfoundation/hardhat-toolbox": "^6.1.0",
-        "@openzeppelin/contracts": "^5.4.0",
-        "@types/circomlibjs": "^0.1.6",
-        "@types/snarkjs": "^0.7.9",
-        "chai": "^4.5.0",
-        "circomlib": "^2.0.5",
-        "circomlibjs": "^0.1.7",
-        "ethers": "^6.15.0",
-        "hardhat": "^2.25.0",
-        "mocha": "^11.7.1",
-        "poseidon-solidity": "^0.0.5",
-        "snarkjs": "^0.7.5",
-        "eslint": "^9.35.0",
-        "@eslint/js": "^9.36.0",
-        "@dgma/hardhat-sol-bundler": "^0.5.11",
-        "@typescript-eslint/eslint-plugin": "^8.44.0",
-        "@typescript-eslint/parser": "^8.44.0"
-    }
+  "name": "circuits",
+  "version": "1.0.0-alpha",
+  "main": "index.js",
+  "scripts": {
+    "compile": "bash utils/compile.sh",
+    "test": "npx hardhat test",
+    "commitment": "ts-node utils/commitment.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "deploy": "npx hardhat --network hardhat deploy-bundle",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "zeroleger",
+    "circuit",
+    "plonk"
+  ],
+  "author": "Dzmitry Lahunouski",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "Circuit for the Zeroleger",
+  "devDependencies": {
+    "@dgma/hardhat-sol-bundler": "^0.5.11",
+    "@eslint/js": "^9.36.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@types/circomlibjs": "^0.1.6",
+    "@types/snarkjs": "^0.7.9",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "chai": "^4.5.0",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "eslint": "^9.35.0",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.25.0",
+    "mocha": "^11.7.5",
+    "poseidon-solidity": "^0.0.5",
+    "snarkjs": "^0.7.5",
+    "husky": "^9.1.7"
+  }
 }

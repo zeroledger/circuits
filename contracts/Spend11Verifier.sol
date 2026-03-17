@@ -7,7 +7,7 @@ import {PlonkVerifier as Spend11Verifier_} from "../circuits/spend_11/build/Veri
 contract Spend11Verifier {
     Spend11Verifier_ public verifier = new Spend11Verifier_();
 
-    function verify(uint256[24] calldata proof, uint256[3] calldata pubSignals) external view returns (bool) {
+    function verify(uint256[24] calldata proof, uint256[4] calldata pubSignals) external view returns (bool) {
         return verifier.verifyProof(proof, pubSignals);
     }
 }
