@@ -51,6 +51,8 @@ describe("Spend11 Circuit Integration Tests", function () {
         const start = performance.now();
         const { proof, publicSignals } = await prove(input, "spend_11");
 
+        expect(publicSignals).to.have.length(4);
+
         // Get calldata for Solidity verifier
         const { calldata_proof, calldata_pubSignals } =
             await exportSolidityCallData(proof, publicSignals);
@@ -115,7 +117,7 @@ describe("Spend11 Circuit Integration Tests", function () {
 
     it("valid case with max uint208 amounts", async function () {
         // Circuit uses GreaterEqThan(208): amounts must be in [0, 2^208 - 1]
-        const MAX_UINT208 = (BigInt(2) ** BigInt(208)) - BigInt(1);
+        const MAX_UINT208 = BigInt(2) ** BigInt(208) - BigInt(1);
         const publicOutput = BigInt(10);
         const outputAmount = MAX_UINT208 - publicOutput; // balance: input === output + public
 
@@ -169,12 +171,16 @@ describe("Spend11 Circuit Integration Tests", function () {
             output_amounts: [OVER_MAX_UINT208.toString()],
             output_sValues: [""],
         };
-        input.input_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString("hex")}`;
+        input.input_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString(
+            "hex"
+        )}`;
         input.inputs_hashes[0] = await computePoseidon({
             amount: input.input_amounts[0],
             entropy: input.input_sValues[0],
         });
-        input.output_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString("hex")}`;
+        input.output_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString(
+            "hex"
+        )}`;
         input.outputs_hashes[0] = await computePoseidon({
             amount: input.output_amounts[0],
             entropy: input.output_sValues[0],
@@ -182,9 +188,14 @@ describe("Spend11 Circuit Integration Tests", function () {
 
         try {
             await prove(input, "spend_11");
-            expect.fail("Expected prove to fail when input amount exceeds max(uint208)");
+            expect.fail(
+                "Expected prove to fail when input amount exceeds max(uint208)"
+            );
         } catch (error: any) {
-            console.log("Correctly failed with input > max(uint208):", error.message);
+            console.log(
+                "Correctly failed with input > max(uint208):",
+                error.message
+            );
         }
     });
 
@@ -200,12 +211,16 @@ describe("Spend11 Circuit Integration Tests", function () {
             output_amounts: [OVER_MAX_UINT208.toString()],
             output_sValues: [""],
         };
-        input.input_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString("hex")}`;
+        input.input_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString(
+            "hex"
+        )}`;
         input.inputs_hashes[0] = await computePoseidon({
             amount: input.input_amounts[0],
             entropy: input.input_sValues[0],
         });
-        input.output_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString("hex")}`;
+        input.output_sValues[0] = `0x${Buffer.from(randomBytes(32)).toString(
+            "hex"
+        )}`;
         input.outputs_hashes[0] = await computePoseidon({
             amount: input.output_amounts[0],
             entropy: input.output_sValues[0],
@@ -213,9 +228,14 @@ describe("Spend11 Circuit Integration Tests", function () {
 
         try {
             await prove(input, "spend_11");
-            expect.fail("Expected prove to fail when output amount exceeds max(uint208)");
+            expect.fail(
+                "Expected prove to fail when output amount exceeds max(uint208)"
+            );
         } catch (error: any) {
-            console.log("Correctly failed with output > max(uint208):", error.message);
+            console.log(
+                "Correctly failed with output > max(uint208):",
+                error.message
+            );
         }
     });
 

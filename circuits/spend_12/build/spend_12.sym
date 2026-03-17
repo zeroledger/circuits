@@ -1,8 +1,8 @@
 1,1,74,main.inputs_hashes[0]
-2,2,74,main.outputs_hashes[0]
-3,3,74,main.outputs_hashes[1]
-4,4,74,main.public_output_amount
-5,5,74,main.inputs_interest[0]
+2,2,74,main.inputs_interest[0]
+3,3,74,main.outputs_hashes[0]
+4,4,74,main.outputs_hashes[1]
+5,5,74,main.public_output_amount
 6,6,74,main.input_amounts[0]
 7,7,74,main.input_sValues[0]
 8,8,74,main.output_amounts[0]

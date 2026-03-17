@@ -36,10 +36,22 @@ circuits/
 - **TypeScript**: Development language
 - **SnarkJS**: JavaScript library for zk-SNARKs
 
+### Spend Public Signals
+
+All `spend_*` circuits expose the following public signals (in order):
+
+- `inputs_hashes`
+- `inputs_interest`
+- `outputs_hashes`
+- `public_output_amount`
+
+`inputs_interest` is public so verifier calldata now includes per-input interest values.
+
 ## How to Use or Develop
 
 ### Prerequisites
 
+- [git-lfs](https://git-lfs.com/)
 - Node.js (v16+)
 - Circom compiler
 - PLONK trusted setup files (automatically downloaded)
