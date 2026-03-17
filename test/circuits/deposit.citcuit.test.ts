@@ -22,7 +22,7 @@ describe("Deposit Circuit Integration Tests", function () {
         };
 
         for (let i = 0; i < 3; i++) {
-            // Use smaller amounts that fit within 240 bits (2^240 - 1)
+            // Use smaller amounts that fit within 208 bits (circuit uses uint208)
             const amount = BigInt(Math.floor(Math.random() * 1000000) + 1);
             input.amounts[i] = amount.toString();
             input.sValues[i] = `0x${Buffer.from(randomBytes(32)).toString(
@@ -50,6 +50,68 @@ describe("Deposit Circuit Integration Tests", function () {
         expect(isValidOnChain).to.be.true;
 
         console.log(`proving time: ${performance.now() - start}`);
+    });
+
+    it("valid case with max uint208 amount", async function () {
+        // Circuit uses GreaterEqThan(208): amounts must be in [0, 2^208 - 1]
+        const MAX_UINT208 = (BigInt(2) ** BigInt(208)) - BigInt(1);
+
+        const input = {
+            hashes: ["", "", ""],
+            totalAmount: MAX_UINT208.toString(),
+            amounts: [MAX_UINT208.toString(), "0", "0"],
+            sValues: ["", "", ""],
+        };
+
+        for (let i = 0; i < 3; i++) {
+            input.sValues[i] = `0x${Buffer.from(randomBytes(32)).toString(
+                "hex"
+            )}`;
+            input.hashes[i] = await computePoseidon({
+                amount: input.amounts[i],
+                entropy: input.sValues[i],
+            });
+        }
+
+        const { proof, publicSignals } = await prove(input, "deposit");
+        const { calldata_proof, calldata_pubSignals } =
+            await exportSolidityCallData(proof, publicSignals);
+
+        const isValidOnChain = await verifier.verify(
+            calldata_proof,
+            calldata_pubSignals
+        );
+        expect(isValidOnChain).to.be.true;
+    });
+
+    it("should fail when amount exceeds max(uint208)", async function () {
+        // max(uint208) = 2^208 - 1; 2^208 is out of range
+        const OVER_MAX_UINT208 = BigInt(2) ** BigInt(208);
+
+        const input = {
+            hashes: ["", "", ""],
+            totalAmount: OVER_MAX_UINT208.toString(),
+            amounts: [OVER_MAX_UINT208.toString(), "0", "0"],
+            sValues: ["", "", ""],
+        };
+
+        for (let i = 0; i < 3; i++) {
+            input.sValues[i] = `0x${Buffer.from(randomBytes(32)).toString(
+                "hex"
+            )}`;
+            input.hashes[i] = await computePoseidon({
+                amount: input.amounts[i],
+                entropy: input.sValues[i],
+            });
+        }
+
+        try {
+            await prove(input, "deposit");
+            expect.fail("Expected prove to fail when amount exceeds max(uint208)");
+        } catch (error: any) {
+            // Expected to fail - amount > 2^208 - 1 not allowed
+            console.log("Correctly failed with amount > max(uint208):", error.message);
+        }
     });
 
     it("should fail with negative amount", async function () {

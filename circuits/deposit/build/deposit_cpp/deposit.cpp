@@ -313,13 +313,13 @@ uint get_main_input_signal_start() {return 1;}
 
 uint get_main_input_signal_no() {return 10;}
 
-uint get_total_signal_no() {return 3056;}
+uint get_total_signal_no() {return 2960;}
 
 uint get_number_of_components() {return 478;}
 
 uint get_size_of_input_hashmap() {return 256;}
 
-uint get_size_of_witness() {return 2288;}
+uint get_size_of_witness() {return 2192;}
 
 uint get_size_of_constants() {return 25025;}
 
@@ -147759,7 +147759,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -147812,7 +147815,10 @@ Fr_copy(aux_dest,&expaux[0]);
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -148366,7 +148372,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -148518,7 +148527,10 @@ Fr_lt(&expaux[0],&lvar[11],&circuitConstants[82]); // line circom 32
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -149072,7 +149084,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -149626,7 +149641,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -150180,7 +150198,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -150332,7 +150353,10 @@ Fr_lt(&expaux[0],&lvar[11],&circuitConstants[82]); // line circom 32
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -152150,7 +152174,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -153968,7 +153995,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -155786,7 +155816,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -157604,7 +157637,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -159422,7 +159458,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -161240,7 +161279,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -163058,7 +163100,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -164876,7 +164921,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -166694,7 +166742,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -168512,7 +168563,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -170330,7 +170384,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -172148,7 +172205,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -173966,7 +174026,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -175784,7 +175847,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -177602,7 +177668,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -179420,7 +179489,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -181238,7 +181310,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -183056,7 +183131,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -184874,7 +184952,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -186692,7 +186773,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -188510,7 +188594,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -190328,7 +190415,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -192146,7 +192236,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -193964,7 +194057,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -195782,7 +195878,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -197600,7 +197699,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -199418,7 +199520,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -201236,7 +201341,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -203054,7 +203162,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -204872,7 +204983,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -206690,7 +206804,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -208508,7 +208625,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -210326,7 +210446,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -212144,7 +212267,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -213962,7 +214088,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -215780,7 +215909,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -217598,7 +217730,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -219416,7 +219551,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -221234,7 +221372,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -223052,7 +223193,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -224870,7 +225014,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -226688,7 +226835,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -228506,7 +228656,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -230324,7 +230477,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -232142,7 +232298,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -233960,7 +234119,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -235778,7 +235940,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -237596,7 +237761,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -239414,7 +239582,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -241232,7 +241403,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -243050,7 +243224,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -244868,7 +245045,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -246686,7 +246866,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -248504,7 +248687,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -250322,7 +250508,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -252140,7 +252329,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -253958,7 +254150,10 @@ Fr_lt(&expaux[0],&lvar[288],&circuitConstants[82]); // line circom 62
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -254512,7 +254707,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -255066,7 +255264,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -255620,7 +255821,10 @@ Fr_lt(&expaux[0],&lvar[83],&circuitConstants[82]); // line circom 22
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -255755,7 +255959,10 @@ Fr_copy(aux_dest,&lvar[11]);
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -255772,7 +255979,7 @@ ctx->componentMemory[coffset].subcomponents = new uint[154]{0};
 void PoseidonEx_69_run(uint ctx_index,Circom_CalcWit* ctx){
 FrElement* circuitConstants = ctx->circuitConstants;
 FrElement* signalValues = ctx->signalValues;
-FrElement expaux[2];
+FrElement expaux[3];
 FrElement lvar[413];
 u64 mySignalStart = ctx->componentMemory[ctx_index].signalStart;
 std::string myTemplateName = ctx->componentMemory[ctx_index].templateName;
@@ -259486,7 +259693,10 @@ Fr_lt(&expaux[0],&lvar[411],&circuitConstants[83]); // line circom 188
 }
 for (uint i = 0; i < 154; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -259582,7 +259792,10 @@ Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[0]].sig
 }
 for (uint i = 0; i < 1; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -259616,7 +259829,7 @@ int cmp_index_ref_load = -1;
 PFrElement aux_dest = &lvar[0];
 // load src
 // end load src
-Fr_copy(aux_dest,&circuitConstants[580]);
+Fr_copy(aux_dest,&circuitConstants[561]);
 }
 {
 PFrElement aux_dest = &lvar[1];
@@ -259636,12 +259849,12 @@ PFrElement aux_dest = &lvar[3];
 // end load src
 Fr_copy(aux_dest,&circuitConstants[81]);
 }
-Fr_lt(&expaux[0],&lvar[3],&circuitConstants[580]); // line circom 31
+Fr_lt(&expaux[0],&lvar[3],&circuitConstants[561]); // line circom 31
 while(Fr_isTrue(&expaux[0])){
 {
 PFrElement aux_dest = &signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[3])) + 0)];
 // load src
-Fr_shr(&expaux[1],&signalValues[mySignalStart + 241],&lvar[3]); // line circom 32
+Fr_shr(&expaux[1],&signalValues[mySignalStart + 209],&lvar[3]); // line circom 32
 Fr_band(&expaux[0],&expaux[1],&circuitConstants[83]); // line circom 32
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
@@ -259677,18 +259890,21 @@ Fr_add(&expaux[0],&lvar[3],&circuitConstants[83]); // line circom 31
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
 }
-Fr_lt(&expaux[0],&lvar[3],&circuitConstants[580]); // line circom 31
+Fr_lt(&expaux[0],&lvar[3],&circuitConstants[561]); // line circom 31
 }
 {
 {{
-Fr_eq(&expaux[0],&lvar[1],&signalValues[mySignalStart + 241]); // line circom 38
+Fr_eq(&expaux[0],&lvar[1],&signalValues[mySignalStart + 209]); // line circom 38
 }}
 if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 38. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 for (uint i = 0; i < 0; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -259722,7 +259938,7 @@ int cmp_index_ref_load = -1;
 PFrElement aux_dest = &lvar[0];
 // load src
 // end load src
-Fr_copy(aux_dest,&circuitConstants[447]);
+Fr_copy(aux_dest,&circuitConstants[430]);
 }
 {
 std::string new_cmp_name = "n2b";
@@ -259736,7 +259952,7 @@ assert(Fr_isTrue(&circuitConstants[83]));
 {
 uint cmp_index_ref = 0;
 {
-PFrElement aux_dest = &ctx->signalValues[ctx->componentMemory[mySubcomponents[cmp_index_ref]].signalStart + 241];
+PFrElement aux_dest = &ctx->signalValues[ctx->componentMemory[mySubcomponents[cmp_index_ref]].signalStart + 209];
 // load src
 Fr_add(&expaux[1],&signalValues[mySignalStart + 1],&circuitConstants[607]); // line circom 96
 Fr_sub(&expaux[0],&expaux[1],&signalValues[mySignalStart + 2]); // line circom 96
@@ -259753,13 +259969,16 @@ PFrElement aux_dest = &signalValues[mySignalStart + 0];
 // load src
 cmp_index_ref_load = 0;
 cmp_index_ref_load = 0;
-Fr_sub(&expaux[0],&circuitConstants[83],&ctx->signalValues[ctx->componentMemory[mySubcomponents[0]].signalStart + 240]); // line circom 98
+Fr_sub(&expaux[0],&circuitConstants[83],&ctx->signalValues[ctx->componentMemory[mySubcomponents[0]].signalStart + 208]); // line circom 98
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
 }
 for (uint i = 0; i < 1; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -259793,7 +260012,7 @@ int cmp_index_ref_load = -1;
 PFrElement aux_dest = &lvar[0];
 // load src
 // end load src
-Fr_copy(aux_dest,&circuitConstants[447]);
+Fr_copy(aux_dest,&circuitConstants[430]);
 }
 {
 std::string new_cmp_name = "lt";
@@ -259836,7 +260055,10 @@ Fr_copy(aux_dest,&ctx->signalValues[ctx->componentMemory[mySubcomponents[0]].sig
 }
 for (uint i = 0; i < 1; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
@@ -259894,7 +260116,7 @@ for (uint i = 0; i < 3; i++) {
 std::string new_cmp_name = "nonNegChecks"+ctx->generate_position_array(aux_dimensions, 1, i);
 GreaterEqThan_73_create(csoffset,aux_cmp_num,ctx,new_cmp_name,myId);
 mySubcomponents[aux_create+ i] = aux_cmp_num;
-csoffset += 248 ;
+csoffset += 216 ;
 aux_cmp_num += 3;
 }
 }
@@ -259910,7 +260132,7 @@ PFrElement aux_dest = &lvar[2];
 // end load src
 Fr_copy(aux_dest,&circuitConstants[81]);
 }
-Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 23
+Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 21
 while(Fr_isTrue(&expaux[0])){
 {
 uint cmp_index_ref = ((1 * Fr_toInt(&lvar[2])) + 0);
@@ -259944,9 +260166,9 @@ Poseidon_70_run(mySubcomponents[cmp_index_ref],ctx);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 0);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 0);
 {{
-Fr_eq(&expaux[0],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 0)],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 0)]].signalStart + 0]); // line circom 28
+Fr_eq(&expaux[0],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 0)],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 0)]].signalStart + 0]); // line circom 26
 }}
-if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 28. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 26. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 {
@@ -259981,37 +260203,40 @@ GreaterEqThan_73_run(mySubcomponents[cmp_index_ref],ctx);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 3);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 3);
 {{
-Fr_eq(&expaux[0],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 3)]].signalStart + 0],&circuitConstants[83]); // line circom 34
+Fr_eq(&expaux[0],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 3)]].signalStart + 0],&circuitConstants[83]); // line circom 32
 }}
-if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 34. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 32. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 {
 PFrElement aux_dest = &lvar[1];
 // load src
-Fr_add(&expaux[0],&lvar[1],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 4)]); // line circom 37
+Fr_add(&expaux[0],&lvar[1],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 4)]); // line circom 35
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
 }
 {
 PFrElement aux_dest = &lvar[2];
 // load src
-Fr_add(&expaux[0],&lvar[2],&circuitConstants[83]); // line circom 23
+Fr_add(&expaux[0],&lvar[2],&circuitConstants[83]); // line circom 21
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
 }
-Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 23
+Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 21
 }
 {
 {{
-Fr_eq(&expaux[0],&lvar[1],&signalValues[mySignalStart + 3]); // line circom 41
+Fr_eq(&expaux[0],&lvar[1],&signalValues[mySignalStart + 3]); // line circom 39
 }}
-if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 41. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 39. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 for (uint i = 0; i < 6; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];
-if (index_subc != 0)release_memory_component(ctx,index_subc);
+if (index_subc != 0){
+assert(!(ctx->componentMemory[index_subc].inputCounter));
+release_memory_component(ctx,index_subc);
+}
 }
 }
 
