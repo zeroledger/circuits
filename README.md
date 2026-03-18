@@ -7,7 +7,7 @@ Zero-knowledge circuits for the ZeroLedger protocol, implementing privacy-preser
 This repository contains zero-knowledge circuits that enable private transactions in the ZeroLedger protocol. The circuits implement:
 
 - **Deposit operations**: Private deposit of funds with commitment generation
-- **Spend operations**: Private spending with various input/output configurations (1-1, 1-2, 1-3, 2-1, 2-2, 2-3, 3-1, 3-2, 3-3, 1-6-1, 8-1)
+- **Spend operations**: Private spending with various input/output configurations (1-1, 1-2, 1-3, 2-1, 2-2, 2-3, 3-1, 3-2, 3-3, 6-1, 12-1)
 - **Poseidon hashing**: Efficient zero-knowledge friendly hash function
 - **Commitment schemes**: Cryptographic commitments for privacy
 
