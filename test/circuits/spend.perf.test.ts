@@ -105,7 +105,8 @@ describe("Spend Circuits Performance Tests", function () {
             "Spend23Verifier",
             "Spend31Verifier",
             "Spend32Verifier",
-            "Spend161Verifier",
+            "Spend61Verifier",
+            "Spend121Verifier",
         ];
 
         for (const name of verifierNames) {
@@ -195,14 +196,28 @@ describe("Spend Circuits Performance Tests", function () {
         );
     });
 
-    it("Spend161 - 16 inputs, 1 output", async function () {
-        // Generate 16 inputs of 62 tokens each, with the last one getting +8 to make 1000 total
-        const inputAmounts = Array(16).fill(BigInt(62));
-        inputAmounts[15] = BigInt(70); // Last input gets +8 to make total 1000
+    it("Spend61 - 6 inputs, 1 output", async function () {
+        // Generate 6 inputs of 166 tokens each, with the last one getting +8 to make 1000 total
+        const inputAmounts = Array(6).fill(BigInt(166));
+        inputAmounts[5] = BigInt(170); // Last input gets +4 to make total 1000
 
         await runSpendTest(
-            "spend_161",
-            "Spend161Verifier",
+            "spend_61",
+            "Spend61Verifier",
+            inputAmounts, // 1000 total
+            [BigInt(990)], // 1000 - 10 fee
+            BigInt(10)
+        );
+    });
+
+    it("Spend121 - 12 inputs, 1 output", async function () {
+        // Generate 16 inputs of 62 tokens each, with the last one getting +8 to make 1000 total
+        const inputAmounts = Array(12).fill(BigInt(83));
+        inputAmounts[11] = BigInt(87); // Last input gets +8 to make total 1000
+
+        await runSpendTest(
+            "spend_121",
+            "Spend121Verifier",
             inputAmounts, // 1000 total
             [BigInt(990)], // 1000 - 10 fee
             BigInt(10)
