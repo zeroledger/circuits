@@ -6,7 +6,10 @@ include "comparators.circom";
 template Spend(maxInputs, maxOutputs) {
     // Public inputs
     signal input inputs_hashes[maxInputs]; // poseidon hashes of {amount, s}
-    signal input inputs_interest[maxInputs]; // uint32, max 1_000_000_000 interest multiplier, 9 - decimal, 1000_000_000 = 1 (100%), 1 - 0.000000001 (0.0000001%) 
+    // uint32, max 2_000_000_000 (100% + 100%), min 0 (100% - 100%)
+    // 9 - decimals, 1_000_000_000 = 1, meaning no interest
+    // 2_000_000_001 = 2.000000001, or 0.000000001% interest
+    signal input inputs_interest_multiplier[maxInputs];
     signal input outputs_hashes[maxOutputs]; // poseidon hashes of {amount, s}
     signal input public_output_amount; // uint208 public output amount
     
@@ -34,8 +37,8 @@ template Spend(maxInputs, maxOutputs) {
         input_hashers[i].inputs[1] <== input_sValues[i];
         inputs_hashes[i] === input_hashers[i].out;
 
-        // 2. Per-input scaled amount: amount * (1e9 + interest)
-        input_scaled_amounts[i] <== input_amounts[i] * (1000000000 + inputs_interest[i]);
+        // 2. Per-input scaled amount: amount * interest_multiplier
+        input_scaled_amounts[i] <== input_amounts[i] * inputs_interest_multiplier[i];
         input_sum += input_scaled_amounts[i];
     }
 
