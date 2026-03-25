@@ -28,7 +28,7 @@ describe("Spend11 Circuit Integration Tests", function () {
     ) {
         const input = {
             inputs_hashes: [""],
-            inputs_interest_multiplier: [interestMultiplier],
+            inputs_modifier: [interestMultiplier],
             outputs_hashes: [""],
             public_output_amount: publicOutputAmount.toString(),
             input_amounts: [inputAmount.toString()],
@@ -111,7 +111,7 @@ describe("Spend11 Circuit Integration Tests", function () {
 
         const input = {
             inputs_hashes: [""],
-            inputs_interest_multiplier: [MULTIPLIER_ONE],
+            inputs_modifier: [MULTIPLIER_ONE],
             outputs_hashes: [""],
             public_output_amount: publicOutput.toString(),
             input_amounts: [MAX_UINT208.toString()],
@@ -151,7 +151,7 @@ describe("Spend11 Circuit Integration Tests", function () {
         const OVER_MAX_UINT208 = BigInt(2) ** BigInt(208);
         const input = {
             inputs_hashes: [""],
-            inputs_interest_multiplier: [MULTIPLIER_ONE],
+            inputs_modifier: [MULTIPLIER_ONE],
             outputs_hashes: [""],
             public_output_amount: "0",
             input_amounts: [OVER_MAX_UINT208.toString()],
@@ -185,7 +185,7 @@ describe("Spend11 Circuit Integration Tests", function () {
         const MAX_UINT208 = BigInt(2) ** BigInt(208) - BigInt(1);
         const input = {
             inputs_hashes: [""],
-            inputs_interest_multiplier: [MULTIPLIER_ONE],
+            inputs_modifier: [MULTIPLIER_ONE],
             outputs_hashes: [""],
             public_output_amount: "0",
             input_amounts: [MAX_UINT208.toString()],
@@ -222,7 +222,10 @@ describe("Spend11 Circuit Integration Tests", function () {
             BigInt(10)
         );
 
-        await expectProveToFail(input, "Expected prove to fail with amount mismatch");
+        await expectProveToFail(
+            input,
+            "Expected prove to fail with amount mismatch"
+        );
     });
 
     it("should fail with negative output amount", async function () {
@@ -248,6 +251,9 @@ describe("Spend11 Circuit Integration Tests", function () {
         );
 
         input.inputs_hashes[0] = "123456789";
-        await expectProveToFail(input, "Expected prove to fail with invalid input hash");
+        await expectProveToFail(
+            input,
+            "Expected prove to fail with invalid input hash"
+        );
     });
 });

@@ -259910,7 +259910,7 @@ PFrElement aux_dest = &lvar[2];
 // end load src
 Fr_copy(aux_dest,&circuitConstants[81]);
 }
-Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 21
+Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 48
 while(Fr_isTrue(&expaux[0])){
 {
 uint cmp_index_ref = ((1 * Fr_toInt(&lvar[2])) + 0);
@@ -259944,9 +259944,9 @@ Poseidon_70_run(mySubcomponents[cmp_index_ref],ctx);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 0);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 0);
 {{
-Fr_eq(&expaux[0],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 0)],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 0)]].signalStart + 0]); // line circom 26
+Fr_eq(&expaux[0],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 0)],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 0)]].signalStart + 0]); // line circom 53
 }}
-if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 26. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 53. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 {
@@ -259981,32 +259981,32 @@ GreaterEqThan_73_run(mySubcomponents[cmp_index_ref],ctx);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 3);
 cmp_index_ref_load = ((1 * Fr_toInt(&lvar[2])) + 3);
 {{
-Fr_eq(&expaux[0],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 3)]].signalStart + 0],&circuitConstants[83]); // line circom 32
+Fr_eq(&expaux[0],&ctx->signalValues[ctx->componentMemory[mySubcomponents[((1 * Fr_toInt(&lvar[2])) + 3)]].signalStart + 0],&circuitConstants[83]); // line circom 59
 }}
-if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 32. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 59. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 {
 PFrElement aux_dest = &lvar[1];
 // load src
-Fr_add(&expaux[0],&lvar[1],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 4)]); // line circom 35
+Fr_add(&expaux[0],&lvar[1],&signalValues[mySignalStart + ((1 * Fr_toInt(&lvar[2])) + 4)]); // line circom 62
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
 }
 {
 PFrElement aux_dest = &lvar[2];
 // load src
-Fr_add(&expaux[0],&lvar[2],&circuitConstants[83]); // line circom 21
+Fr_add(&expaux[0],&lvar[2],&circuitConstants[83]); // line circom 48
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
 }
-Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 21
+Fr_lt(&expaux[0],&lvar[2],&circuitConstants[82]); // line circom 48
 }
 {
 {{
-Fr_eq(&expaux[0],&lvar[1],&signalValues[mySignalStart + 3]); // line circom 39
+Fr_eq(&expaux[0],&lvar[1],&signalValues[mySignalStart + 3]); // line circom 66
 }}
-if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 39. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 66. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
 assert(Fr_isTrue(&expaux[0]));
 }
 for (uint i = 0; i < 6; i++){

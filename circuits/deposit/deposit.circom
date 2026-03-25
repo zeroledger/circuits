@@ -3,6 +3,33 @@ pragma circom 2.1.4;
 include "poseidon.circom";
 include "comparators.circom";
 
+/*
+  Deposit circuit (Deposit(maxInputs))
+
+  Goal:
+  Prove that each private {amount[i], sValues[i]} opens the corresponding public commitment hashes[i]
+  (Poseidon(2)), that all amounts are non-negative, and that the sum of all amounts equals totalAmount.
+
+  Visual schema (per input i):
+
+  amounts[i] (private) ----\
+                             -> Poseidon(2) -> hashes[i] (public commitment)
+  sValues[i] (private) ---/
+
+  amounts[i] (private) -> non-negativity check: amounts[i] >= 0
+
+  Main constraint:
+    sum(amounts[i]) == totalAmount
+
+  Public / Private inputs:
+    Public:
+      hashes[maxInputs] : Poseidon commitments of {amount, s}
+      totalAmount       : expected sum of all amounts (uint208)
+    Private:
+      amounts[maxInputs] : individual deposit amounts (uint208)
+      sValues[maxInputs]  : secret values used in the commitment
+*/
+
 template Deposit(maxInputs) {
     // Public inputs
     signal input hashes[maxInputs]; // poseidon hashes of {amount, s}
