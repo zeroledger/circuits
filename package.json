@@ -1,6 +1,6 @@
 {
   "name": "circuits",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-betta",
   "main": "index.js",
   "scripts": {
     "compile": "bash utils/compile.sh",

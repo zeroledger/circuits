@@ -32,7 +32,7 @@ describe("Spend Circuits Performance Tests", function () {
     ): Promise<any> {
         const input = {
             inputs_hashes: Array(inputAmounts.length).fill(""),
-            inputs_interest_multiplier: Array(inputAmounts.length).fill(""),
+            inputs_modifier: Array(inputAmounts.length).fill(""),
             outputs_hashes: Array(outputAmounts.length).fill(""),
             public_output_amount: fee.toString(), // public output equivalent to previous fee
             input_amounts: Array(inputAmounts.length).fill(""),
@@ -48,7 +48,7 @@ describe("Spend Circuits Performance Tests", function () {
             input.input_sValues[i] = commitment.sValue;
             input.inputs_hashes[i] = commitment.hash;
             // 1_000_000_000 is neutral (x1.0 multiplier)
-            input.inputs_interest_multiplier[i] = "1000000000";
+            input.inputs_modifier[i] = "1000000000";
         }
 
         // Generate output commitments

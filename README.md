@@ -41,11 +41,18 @@ circuits/
 All `spend_*` circuits expose the following public signals (in order):
 
 - `inputs_hashes`
-- `inputs_interest`
+- `inputs_modifier`
 - `outputs_hashes`
 - `public_output_amount`
 
-`inputs_interest` is public so verifier calldata now includes per-input interest values.
+`inputs_modifier` is public so verifier calldata includes per-input interest modifiers.
+
+### Deposit Public Signals
+
+The `deposit` circuit exposes:
+
+- `hashes` (Poseidon commitments of `{amount, s}`)
+- `totalAmount` (uint208; sum of all `amounts[i]`)
 
 ## How to Use or Develop
 
