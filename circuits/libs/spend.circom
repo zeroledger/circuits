@@ -33,7 +33,7 @@ template Spend(maxInputs, maxOutputs) {
     signal input inputs_hashes[maxInputs];
     // uint32, max 2_000_000_000 (100% + 100%), min 0 (100% - 100%)
     // 9 - decimals, 1_000_000_000 = 1, meaning no interest
-    // 2_000_000_001 = 2.000000001, or 0.000000001% interest
+    // 1_000_000_001 = 1.000000001, or 0.000000001% interest
     signal input inputs_modifier[maxInputs];
     // poseidon hashes of {uint208 amount, bytes32 secret}
     signal input outputs_hashes[maxOutputs];
@@ -87,6 +87,9 @@ template Spend(maxInputs, maxOutputs) {
     }
 
     // Balance: sum_i amount_i * (1e9 + interest_i) == (output_sum + public_output_amount) * 1e9
-    // (linear in input_scaled_amounts and output_amounts -> quadratic constraint)
-    input_sum === (output_sum + public_output_amount) * 1000000000;
+    // enforce 'weak' equality, since output_sum and public_output_amount can only be integers
+    component weakEqCheck = GreaterEqThan(248);
+    weakEqCheck.in[0] <== input_sum;
+    weakEqCheck.in[1] <== (output_sum + public_output_amount) * 1000000000;
+    weakEqCheck.out === 1;
 }

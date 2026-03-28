@@ -54,7 +54,7 @@ describe("Deposit Circuit Integration Tests", function () {
 
     it("valid case with max uint208 amount", async function () {
         // Circuit uses GreaterEqThan(208): amounts must be in [0, 2^208 - 1]
-        const MAX_UINT208 = (BigInt(2) ** BigInt(208)) - BigInt(1);
+        const MAX_UINT208 = BigInt(2) ** BigInt(208) - BigInt(1);
 
         const input = {
             hashes: ["", "", ""],
@@ -107,10 +107,15 @@ describe("Deposit Circuit Integration Tests", function () {
 
         try {
             await prove(input, "deposit");
-            expect.fail("Expected prove to fail when amount exceeds max(uint208)");
+            expect.fail(
+                "Expected prove to fail when amount exceeds max(uint208)"
+            );
         } catch (error: any) {
             // Expected to fail - amount > 2^208 - 1 not allowed
-            console.log("Correctly failed with amount > max(uint208):", error.message);
+            console.log(
+                "Correctly failed with amount > max(uint208):",
+                error.message
+            );
         }
     });
 
@@ -140,6 +145,7 @@ describe("Deposit Circuit Integration Tests", function () {
         }
 
         // The circuit should fail to generate a proof with negative amounts
+        let witnessRejected = false;
         try {
             await prove(input, "deposit");
             console.log("Circuit accepted negative amount");
@@ -147,7 +153,11 @@ describe("Deposit Circuit Integration Tests", function () {
             expect.fail("Expected prove to fail with negative amount");
         } catch (error: any) {
             // Expected to fail - negative amounts should not be accepted
+            witnessRejected = true;
             console.log(error.message);
+        }
+        if (!witnessRejected) {
+            throw new Error("Expected prove to fail with negative amount");
         }
     });
 
@@ -171,13 +181,15 @@ describe("Deposit Circuit Integration Tests", function () {
         }
 
         // The circuit should fail because sum (600) != totalAmount (1000)
+        let witnessRejected = false;
         try {
             await prove(input, "deposit");
-            // If we reach here, the test should fail
-            expect.fail("Expected prove to fail with sum mismatch");
         } catch (error: any) {
-            // Expected to fail - sum should match totalAmount
-            console.log(error.message);
+            witnessRejected = true;
+            expect(error?.message).to.match(/Assert Failed/i);
+        }
+        if (!witnessRejected) {
+            throw new Error("Expected prove to fail with sum mismatch");
         }
     });
 });
