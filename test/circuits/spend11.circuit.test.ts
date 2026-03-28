@@ -214,7 +214,7 @@ describe("Spend11 Circuit Integration Tests", function () {
         );
     });
 
-    it("should fail with amount mismatch", async function () {
+    it("should fail with output amount > input amount", async function () {
         const input = await buildInput(
             BigInt(1000),
             MULTIPLIER_ONE,
@@ -224,7 +224,7 @@ describe("Spend11 Circuit Integration Tests", function () {
 
         await expectProveToFail(
             input,
-            "Expected prove to fail with amount mismatch"
+            "Expected prove to fail with output amount > input amount"
         );
     });
 
